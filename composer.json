@@ -1,0 +1,45 @@
+{
+    "name": "imagina/ivehicles",
+    "description": "",
+    "type": "asgard-module",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.0.0",
+        "composer/installers": "~1.0",
+        "idavoll/core-module": "~3.0",
+        "imagina/iviewcounts-module": ">=0.0.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.0",
+        "orchestra/testbench": "3.5.*"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Ivehicles\\": ".",
+            "Modules\\": "Modules/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Ivehicles\\Providers\\IvehiclesServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Ivehicles\\": ""
+        }
+    }
+}
