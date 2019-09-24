@@ -42,35 +42,6 @@ class VehiclePresenter extends Presenter
         return 0;
     }
 
-
-    public function sendViewWrapper()
-    {
-        return PHP_EOL . '<script>
-  var URLdomain ='.url('/').'
-        var id= '.$this->entity->id.'
-    $(document).ready(function(){
-        function sendVisit(id){
-            var data = {"attributes":{"entity":"vehicles","entity_id":id}}
-
-            $.post(URLdomain + \'/api/counts\',data).done(function(response){
-                
-            })
-            .fail(function(error){
-                console.log(error);
-            })
-            .always(function(data) {
-                console.log(\'send\')
-            });
-        }
-         setTimeout(function() {
-                    sendVisit(id);
-                },10000); 
-        });
-                  
-            
-            </script>'. PHP_EOL;
-    }
-
     /**
      * Getting the label class for the appropriate status
      * @return string
