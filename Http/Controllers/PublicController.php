@@ -44,7 +44,7 @@ class PublicController extends BasePublicController
         try {
             if (isset($search) && !empty($search)) {
                // dd($search);
-                $params = json_decode(json_encode(['filter' => ['price' => ['min' => $search->minprice, 'max' => $search->maxprice], 'year' => ['min' => $search->yearsince, 'max' => $search->yearto], 'brand' => $search->brand ?? null, 'model' => $search->model ?? null, 'search' => $search->search ?? null], 'include' => [], 'take' => 12, 'page' => $search->page ?? 1]));
+                $params = json_decode(json_encode(['filter' => ['price' => ['min' => $search->minprice, 'max' => $search->maxprice], 'year' => ['min' => $search->yearsince, 'max' => $search->yearto], 'brands' => $search->brand ?? null, 'models' => $search->model ?? null, 'search' => $search->search ?? null], 'include' => [], 'take' => 12, 'page' => $search->page ?? 1]));
                 $vehicles = $this->vehicles->getItemsBy($params);
 
             } else {

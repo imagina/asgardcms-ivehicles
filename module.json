@@ -3,7 +3,7 @@
     "alias": "ivehicles",
     "description": "his Asgard's Module helps to list and manage cars easily. The add-on includes advanced search, autocomplete for vehicle data,",
     "keywords": ["Asgard","vehicle", "brand", "features"],
-    "version": "1.0.0",
+    "version": "1.0.1",
 	"active": 1,
     "order": 1,
     "providers": [

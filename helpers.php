@@ -11,13 +11,14 @@ if(!function_exists('get_vehicles')){
             'owner' => array(),// place, categorias o usuarios, que desee excluir de una consulta metodo de llmado tour=>'', places=>'' , users=>''
             'take' => 5, //Numero de places a obtener,
             'skip' => 0, //Omitir Cuantos place a llamar
-            'order' => array(),//['field'=>'created_at', 'way'=>'des']
-            'status' => 1
+            'order' => ['field'=>'created_at', 'way'=>'desc'],
+            'status' => 1,
+            'featured'=>false
         );
 
         $options = array_merge($default_options, $options);
 
-        $params =(object)['filter'=>$options, 'includes'=>array(), 'page'=>null,'take'=>$options['take']];
+        $params =json_decode(json_encode(['filter'=>$options, 'include'=>array(), 'page'=>null,'take'=>$options['take']]));
 
         return $vehicles->getItemsBy($params);
 

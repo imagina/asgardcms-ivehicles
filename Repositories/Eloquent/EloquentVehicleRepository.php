@@ -39,8 +39,8 @@ class EloquentVehicleRepository extends EloquentBaseRepository implements Vehicl
                 $models= is_array($filter->models)?$filter->models:[$filter->models];
                 $query->whereIn('model_id',$models);
             }
-            if (isset($filter->featured)){
-                $query->where('featured',$filter->featured);
+            if (isset($filter->featured) && $filter->featured??false){
+                $query->where('featured',1);
             }
             if (isset($filter->price)) { //si hay que filtrar por rango de precio
                 $price = $filter->price;
@@ -86,6 +86,7 @@ class EloquentVehicleRepository extends EloquentBaseRepository implements Vehicl
 
 
             if (isset($filter->order)) {
+
                 $orderByField = $filter->order->field ?? 'created_at';
                 $orderWay = $filter->order->way ?? 'desc';
                 $query->orderBy($orderByField, $orderWay);
@@ -98,7 +99,6 @@ class EloquentVehicleRepository extends EloquentBaseRepository implements Vehicl
 
         if (isset($params->fields) && count($params->fields))
             $query->select($params->fields);
-
 
         if (isset($params->page) && $params->page) {
             return $query->paginate($params->take);

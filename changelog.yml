@@ -1,11 +1,15 @@
 url: https://github.com/imagina/asgardcms-icommerce
 versions:
 
-  "0.0.1":
+  "1.0.1":
     added:
-      - Vehicles entity with features
-      - Brands Vehicles entity
-      - Models Brands Vehicles entity
-      - Type static feature
-      - Type fuel static
-      -
+    - Vehicles entity with features
+    - Brands Vehicles entity
+    - Models Brands Vehicles entity
+    - Type static feature
+    - Type fuel static
+
+  "1.0.0":
+    added:
+     - initial version
+
